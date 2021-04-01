@@ -12,4 +12,17 @@ export class MovieListComponent implements OnInit {
 
    ngOnInit() {
    }
+
+   addMovie (newTitle: string) {
+      let errMsg = '';
+      
+      if(newTitle === ''){
+         errMsg = "ERROR. PLEASE ENTER A TITLE."
+      } else if(this.movies.includes(newTitle)){
+         errMsg = `${newTitle} is already scheduled for viewing.`
+      } else {
+         this.movies.push(newTitle)
+      }
+      return errMsg;
+   }
 }

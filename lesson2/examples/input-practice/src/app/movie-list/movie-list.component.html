@@ -5,4 +5,12 @@
     </ol>
     <hr>
 
+    <input #newMovie (keyup.enter) = "output = addMovie(newMovie.value); newMovie.value = ''" type='text' 
+    placeholder="Enter Movie Title Here"/>
+    <button (click)="output = addMovie(newMovie.value); newMovie.value = '' ">Add</button>
+    <p class = "errMessage" *ngIf = "output">{{output}}</p>
+    
+   
+   
+   
  </div>
